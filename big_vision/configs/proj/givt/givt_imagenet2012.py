@@ -43,7 +43,7 @@ GIVT_MODELS = {
 def get_config(arg=None):
     """A config for training a simple VAE on imagenet2012."""
     arg = bvcc.parse_arg(arg, res=RES, patch_size=PATCH_SIZE, style='ar',  # 'ar' or 'masked'
-                         model_size='default', runlocal=True, singlehost=False,
+                         model_size='default', runlocal=False, singlehost=True,
                          adaptor=False)
     config = ml_collections.ConfigDict()
 
@@ -116,7 +116,7 @@ def get_config(arg=None):
     if arg.model_size == 'large':
         config.vae.model_init = 'gs://big_vision/givt/vae_imagenet_2012_beta_1e-5_params'
     else:
-        config.vae.model_init = '/Users/pauje/Documents/Documents_PaulMBP_2/Projects/big_vision/big_vision/vae_imagenet_2012_beta_5e-5_params'
+        config.vae.model_init = '/scratch/project/dd-24-36/projects/big_vision/big_vision/vae_imagenet_2012_beta_5e-5_params'
     config.vae.model.malib_ckpt = True
     config.vae.model_load = {}
     config.vae.model_load.malib_ckpt = config.vae.model.malib_ckpt
