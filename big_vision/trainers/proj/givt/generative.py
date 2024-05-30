@@ -27,7 +27,7 @@ import big_vision.evaluators.common as eval_common
 import big_vision.input_pipeline as input_pipeline
 from big_vision.models.proj.givt import parallel_decode
 import big_vision.models.proj.givt.decode as softar_decode
-import big_vision.optax as bv_optax
+import big_vision.my_optax as bv_optax
 import big_vision.sharding as bv_sharding
 import big_vision.trainers.proj.givt.utils as trainer_utils
 from big_vision.trainers.proj.uvim import panoptic_task
@@ -74,7 +74,7 @@ P = jax.sharding.PartitionSpec
 def main(argv):
   del argv
 
-  jax.distributed.initialize()
+  # jax.distributed.initialize()
 
   # Make sure TF does not touch GPUs.
   tf.config.set_visible_devices([], "GPU")

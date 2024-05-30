@@ -11,8 +11,8 @@ git+https://github.com/akolesnikoff/panopticapi.git@mute
 overrides
 protobuf
 sentencepiece
-tensorflow-cpu
+# tensorflow-cpu
 tfds-nightly
-tensorflow-text
+# tensorflow-text
 tensorflow-gan
 pycocoevalcap

@@ -19,7 +19,7 @@ from absl import flags
 from absl import logging
 
 from big_vision import input_pipeline
-from big_vision import optax as bv_optax
+from big_vision import my_optax as bv_optax
 from big_vision import utils
 from big_vision.datasets import core as ds_core
 from big_vision.pp import builder as pp_builder
