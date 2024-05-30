@@ -70,7 +70,7 @@ def _get_builder(dataset, data_dir):
 def _get_dataset(builder, skip_decode, **kw):
   """Returns a tf.data to be used."""
   rckw = {k: kw.pop(k) for k in ("shuffle_seed",) if k in kw}
-  builder.download_and_prepare()
+  builder.download_and_prepare(download_dir="~/../../scratch/project/dd-24-36")
   ds = builder.as_dataset(
       read_config=tfds.ReadConfig(
           skip_prefetch=True,  # We prefetch after pipeline.
